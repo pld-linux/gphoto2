@@ -5,7 +5,7 @@ Summary:	Digital camera software
 Summary(pl):	Oprogramowanie dla kamer cyfrowych
 Name:		gphoto2
 Version:	2.0
-Release:	0.2
+Release:	0.3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.gphoto.net/dist/gphoto2-2.0.tar.gz
@@ -59,6 +59,7 @@ Summary:	Header files for gphoto2-lib
 Summary(pl):	Pliki nag³ówkowe dla gphoto2-lib
 Group:		Development/Libraries
 Requires:	%{name}-lib = %{version}
+Requires:	libexif-devel
 
 %description lib-devel
 Header files for gphoto2-lib.
