@@ -12,6 +12,7 @@ Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 # Source0-md5:	5bbee55d4e59b063d3cff0fbc9121006
 URL:		http://www.gphoto.org/
 BuildRequires:	aalib-devel
+BuildRequires:	automake
 BuildRequires:	cdk-devel
 BuildRequires:	gettext-devel
 BuildRequires:	libexif-devel
@@ -46,6 +47,7 @@ uma grande variedade de câmeras fotográficas digitais.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.* .
 CPPFLAGS="-I/usr/include/ncurses"
 %configure
 
