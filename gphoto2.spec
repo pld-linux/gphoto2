@@ -5,7 +5,7 @@ Summary:	Digital camera software
 Summary(pl):	Oprogramowanie dla kamer cyfrowych
 Name:		gphoto2
 Version:	2.0
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.gphoto.net/dist/gphoto2-2.0.tar.gz
@@ -14,6 +14,7 @@ URL:		http://www.gphoto.net/
 BuildRequires:	aalib-devel
 BuildRequires:	bison
 BuildRequires:	cdk-devel
+BuildRequires:	findutils
 BuildRequires:	gettext-devel
 BuildRequires:	gtk-doc
 BuildRequires:	libexif-devel
@@ -25,8 +26,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
+Digital camera software.
 
 %description -l pl
+Oprogramowanie dla kamer cyfrowych.
 
 %package lib
 Summary:	Libraries for digital cameras
@@ -65,17 +68,23 @@ Pliki nag³ówkowe dla gphoto2-lib.
 
 %prep
 %setup -q
-#%patch0 -p1
+%patch0 -p1
 
 %build
-#autoconf
-#cd libgphoto2_port
-#autoconf
-#cd ..
+autoconf
+cd libgphoto2_port
+autoconf
+cd ..
 
-%configure2_13
+%configure
 	#--enable-docs --- doesn't build.
 %{__make}
+
+# avoid relinking to allow build without openldap-devel already installed
+for d in `find -name '*.la'`; do
+	echo "--- Fixing gile '$d'"
+	perl -pi -e 's/^relink_command.*//' $d
+done
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -102,15 +111,20 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
+%{_mandir}/*/*
 
 %files lib -f libgphoto2_port
 %defattr(644,root,root,755)
 %{_libdir}/*.la
 %{_libdir}/*.so.*.*.*
+%{_libdir}/gphoto2/2.0/libgphoto2_*.??
+%{_libdir}/gphoto2_port/0.0.4/libgphoto2_port_*.??
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/*.a
+%{_libdir}/gphoto2/2.0/libgphoto2_*.a
+%{_libdir}/gphoto2_port/0.0.4/libgphoto2_port_*.a
 
 %files lib-devel
 %defattr(644,root,root,755)
