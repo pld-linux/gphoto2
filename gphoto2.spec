@@ -9,13 +9,14 @@ Release:	0.5
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.gphoto.net/dist/%{name}-%{version}.tar.gz
+Patch0:		%{name}-m4.patch
+Patch1:		%{name}-am_ac.patch
 URL:		http://www.gphoto.net/
 BuildRequires:	aalib-devel
 BuildRequires:	bison
 BuildRequires:	cdk-devel
 BuildRequires:	findutils
 BuildRequires:	gettext-devel
-BuildRequires:	gtk-doc
 BuildRequires:	libexif-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libusb-devel
@@ -69,10 +70,23 @@ Pliki nag³ówkowe dla gphoto2-lib.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
-CPPFLAGS="-I/usr/include/cdk -I/usr/include/ncurses"; export CPPFLAGS
-%configure2_13
+install /usr/share/automake/missing .
+libtoolize --copy --force
+aclocal
+autoconf
+cd libgphoto2_port
+install /usr/share/automake/missing .
+libtoolize --copy --force
+aclocal -I m4
+autoconf
+cd ..
+
+CPPFLAGS="-I/usr/include/cdk -I/usr/include/ncurses"
+%configure CPPFLAGS="$CPPFLAGS"
 	#--enable-docs --- doesn't build.
 %{__make}
 
