@@ -77,12 +77,12 @@ Pliki nag³ówkowe dla gphoto2-lib.
 install /usr/share/automake/missing .
 libtoolize --copy --force
 aclocal
-autoconf
+%{__autoconf}
 cd libgphoto2_port
 install /usr/share/automake/missing .
 libtoolize --copy --force
 aclocal -I m4
-autoconf
+%{__autoconf}
 cd ..
 
 CPPFLAGS="-I/usr/include/cdk -I/usr/include/ncurses"
