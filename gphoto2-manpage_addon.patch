@@ -1,0 +1,12 @@
+diff -Nur gphoto2-2.1.4.orig/doc/gphoto2.1 gphoto2-2.1.4/doc/gphoto2.1
+--- gphoto2-2.1.4.orig/doc/gphoto2.1	2004-01-18 21:01:09.000000000 +0100
++++ gphoto2-2.1.4/doc/gphoto2.1	2004-03-07 18:34:20.000000000 +0100
+@@ -281,7 +281,7 @@
+ .SH "SEE ALSO"
+ 
+ .PP
+- \fBlibgphoto2\fR(3), The gPhoto2 Manual,   \fIhttp://www.gphoto.org/\fR 
++ \fBdcraw\fR(1), \fBlibgphoto2\fR(3), The gPhoto2 Manual,   \fIhttp://www.gphoto.org/\fR 
+ 
+ .SH "EXAMPLES"
+ 
