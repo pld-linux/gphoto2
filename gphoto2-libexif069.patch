@@ -1,0 +1,30 @@
+diff -urN aa/gphoto2-2.1.4/configure.in gphoto2-2.1.4/configure.in
+--- aa/gphoto2-2.1.4/configure.in	2004-01-18 21:01:14.000000000 +0100
++++ gphoto2-2.1.4/configure.in	2004-07-01 23:19:38.218387408 +0200
+@@ -236,6 +236,9 @@
+ 	if $have_exif; then
+ 		CPPFLAGS_save="$CPPFLAGS"
+ 		CPPFLAGS=$EXIF_CFLAGS
++		AC_CHECK_HEADER([exif-log.h], [
++                        exif_msg="${exif_msg}, (>= 0.6.9)"
++                        AC_DEFINE(HAVE_EXIF_0_6_9,1,[whether we use a version of libexif equal or greater than 0.6.9])])
+ 		AC_CHECK_HEADER([exif-ifd.h], [
+                         exif_msg="${exif_msg}, (>= 0.5.4)"
+ 			AC_DEFINE(HAVE_EXIF_0_5_4,1,[whether we use a version of libexif greater than 0.5.3])])
+diff -urN aa/gphoto2-2.1.4/gphoto2/actions.c gphoto2-2.1.4/gphoto2/actions.c
+--- aa/gphoto2-2.1.4/gphoto2/actions.c	2004-01-18 21:01:09.000000000 +0100
++++ gphoto2-2.1.4/gphoto2/actions.c	2004-07-01 23:21:08.524658768 +0200
+@@ -351,7 +351,13 @@
+                 e = content->entries[i];
+                 printf ("%-20.20s", exif_tag_get_name (e->tag));
+                 printf ("|");
++#ifdef HAVE_EXIF_0_6_9
++                {char b[1024];
++                printf ("%-59.59s", exif_entry_get_value (e, b, sizeof (b)));
++                }
++#else
+                 printf ("%-59.59s", exif_entry_get_value (e));
++#endif
+                 printf ("\n");
+         }
+ }
