@@ -12,6 +12,7 @@ Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 # Source0-md5:	5bbee55d4e59b063d3cff0fbc9121006
 Patch0:		%{name}-manpage_addon.patch
 Patch1:		%{name}-libexif069.patch
+Patch2:		%{name}-locale_names.patch
 URL:		http://www.gphoto.org/
 BuildRequires:	aalib-devel
 BuildRequires:	autoconf
@@ -51,6 +52,9 @@ uma grande variedade de câmeras fotográficas digitais.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+
+mv po/{no,nb}.po
 
 %build
 cp -f /usr/share/automake/config.* .
