@@ -52,7 +52,10 @@ uma grande variedade de câmeras fotográficas digitais.
 %setup -q
 #%%patch0 -p1
 #%patch1 -p1
-#%patch2 -p1
+%patch2 -p1
+
+mv po/{no,nb}.po
+mv po/{no,nb}.gmo
 
 %build
 cp -f /usr/share/automake/config.* .
