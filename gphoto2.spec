@@ -22,6 +22,8 @@ BuildRequires:	popt-devel
 BuildRequires:	readline-devel
 Requires:	libgphoto2 >= 2.1.1
 Obsoletes:	gphoto2-progs
+Obsoletes:	gphoto2-devel
+Obsoletes:	gphoto2-static
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
