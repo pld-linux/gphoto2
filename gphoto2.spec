@@ -11,7 +11,8 @@ Version:	2.1.0
 Release:	8
 License:	GPL
 Group:		Applications
-Source0:	http://prdownloads.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
+# Source0-md5:	b998bcb01cbb1916dedea03b7119ae42
 Patch0:		%{name}-m4.patch
 Patch1:		%{name}-am_ac.patch
 URL:		http://www.gphoto.net/
