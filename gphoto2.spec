@@ -8,8 +8,7 @@ Version:	2.0
 Release:	0.5
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.gphoto.net/dist/gphoto2-2.0.tar.gz
-Patch0:		%{name}-ncurses.patch
+Source0:	http://www.gphoto.net/dist/%{name}-%{version}.tar.gz
 URL:		http://www.gphoto.net/
 BuildRequires:	aalib-devel
 BuildRequires:	bison
@@ -21,9 +20,11 @@ BuildRequires:	libexif-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libusb-devel
 BuildRequires:	pkgconfig
+BuildRequires:	libtool >= 1.4.2-9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
 Digital camera software.
@@ -68,23 +69,12 @@ Pliki nag³ówkowe dla gphoto2-lib.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-autoconf
-cd libgphoto2_port
-autoconf
-cd ..
-
-%configure
+CPPFLAGS="-I/usr/include/cdk -I/usr/include/ncurses"; export CPPFLAGS
+%configure2_13
 	#--enable-docs --- doesn't build.
 %{__make}
-
-# avoid relinking to allow build without openldap-devel already installed
-for d in `find -name '*.la'`; do
-	echo "--- Fixing gile '$d'"
-	perl -pi -e 's/^relink_command.*//' $d
-done
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -93,7 +83,7 @@ install -d $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install -d "$RPM_BUILD_ROOT/%{_pkgconfigdir}"
-mv $RPM_BUILD_ROOT{/usr/X11R6/lib/pkgconfig,%{_pkgconfigdir}}
+mv $RPM_BUILD_ROOT{%{_libdir}/pkgconfig,%{_pkgconfigdir}}
 
 gzip -9nf README ChangeLog
 
