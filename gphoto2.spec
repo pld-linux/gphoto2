@@ -1,8 +1,8 @@
 # TODO:
 #   make --enable-docs work.
 #   library should be installed in /usr/lib.
-Summary:	Digital camera software
-Summary(pl):	Oprogramowanie dla kamer cyfrowych
+Summary:	Libraries for digital cameras
+Summary(pl):	Biblioteki obs³ugi kamer cyfrowych
 Name:		gphoto2
 Version:	2.1.0
 Release:	5
@@ -28,46 +28,46 @@ BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Digital camera software.
-
-%description -l pl
-Oprogramowanie dla kamer cyfrowych.
-
-%package lib
-Summary:	Libraries for digital cameras
-Summary(pl):	Biblioteki obs³ugi kamer cyfrowych
-Group:		Libraries
-
-%description lib
 Libraries for digital cameras.
 
-%description lib -l pl
+%description -l pl
 Biblioteki obs³ugi kamer cyfrowych.
 
-%package lib-devel
+%package progs
+Summary:	Digital camera software
+Summary(pl):	Oprogramowanie dla kamer cyfrowych
+Group:		Libraries
+Requires:	%{name} >= %{version}
+
+%description progs
+Digital camera software.
+
+%description progs -l pl
+Oprogramowanie dla kamer cyfrowych.
+
+%package devel
 Summary:	Header files for gphoto2-lib
 Summary(pl):	Pliki nag³ówkowe dla gphoto2-lib
 Group:		Development/Libraries
-Requires:	%{name}-lib = %{version}
+Requires:	%{name} = %{version}
 Requires:	libexif-devel
 
-%description lib-devel
+%description devel
 Header files for gphoto2-lib.
 
-%description lib-devel -l pl
+%description devel -l pl
 Pliki nag³ówkowe dla gphoto2-lib.
 
-%package lib-static
+%package static
 Summary:	Static version of gphoto2-lib
 Summary(pl):	Statyczna wersja gphoto2-lib
 Group:		Development/Libraries
-Requires:	%{name}-lib-devel = %{version}
-Obsoletes:	%{name}-static
+Requires:	%{name}-devel = %{version}
 
-%description lib-static
+%description static
 Static version of gphoto2-lib.
 
-%description lib-static -l pl
+%description static -l pl
 Statyczna wersja gphoto2-lib.
 
 %prep
@@ -96,12 +96,10 @@ CPPFLAGS="-I/usr/include/cdk -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-#install -d "$RPM_BUILD_ROOT%{_pkgconfigdir}"
-#mv $RPM_BUILD_ROOT{%{_libdir}/pkgconfig,%{_pkgconfigdir}}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	pkgconfigdir=%{_pkgconfigdir}
 
 %find_lang %{name}
 %find_lang libgphoto2_port
@@ -109,17 +107,10 @@ install -d $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	lib -p /sbin/ldconfig
-%postun	lib -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
-%files -f %{name}.lang
-%defattr(644,root,root,755)
-%doc README ChangeLog
-%attr(755,root,root) %{_bindir}/gphoto2
-%{_datadir}/%{name}
-%{_mandir}/*/*
-
-%files lib -f libgphoto2_port
+%files -f libgphoto2_port.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
 %dir %{_libdir}/gphoto2
@@ -129,15 +120,23 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gphoto2_port/0.5.0
 %attr(755,root,root) %{_libdir}/gphoto2_port/0.5.0/libgphoto2_port_*.??
 
-%files lib-devel
+%files progs -f %{name}.lang
+%defattr(644,root,root,755)
+%doc README ChangeLog
+%attr(755,root,root) %{_bindir}/gphoto2
+%{_datadir}/%{name}
+%{_mandir}/man1/*
+
+%files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gphoto2-*
 %attr(755,root,root) %{_libdir}/*.la
 %attr(755,root,root) %{_libdir}/*.so
 %{_includedir}/gphoto2
 %{_pkgconfigdir}/*
+%{_mandir}/man3/*
 
-%files lib-static
+%files static
 %defattr(644,root,root,755)
 %{_libdir}/*.a
 %{_libdir}/gphoto2/%{version}/lib*.a
