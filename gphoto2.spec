@@ -1,8 +1,11 @@
 Summary:	Command-line frontend to libgphoto2
+Summary(es):	Foto GNU (gphoto) Release 2
 Summary(pl):	Dzia³aj±cy z linii poleceñ program obs³uguj±cy libgphoto2
+Summary(pt_BR):	GNU Photo - programa GNU para câmeras digitais
+Summary(zh_CN):	gPhoto - LinuxÏÂµÄÊ¹ÓÃÊýÂëÏà»úµÄ³ÌÐò
 Name:		gphoto2
 Version:	2.1.1
-Release:	1
+Release:	3
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
@@ -24,9 +27,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 gphoto2 is a command-line frontend to libgphoto2.
 
+%description -l es
+Foto GNU (gphoto).
+
 %description -l pl
 gphoto2 to dzia³aj±cy z linii poleceñ program bêd±cy interfejsem
 u¿ytkownika do libgphoto2.
+
+%description -l pt_BR
+O programa gphoto faz parte do projeto GNOME e é uma interface para
+uma grande variedade de câmeras fotográficas digitais.
 
 %prep
 %setup -q
@@ -34,7 +44,7 @@ u¿ytkownika do libgphoto2.
 %build
 #CPPFLAGS="-I/usr/include/cdk -I/usr/include/ncurses"
 CPPFLAGS="-I/usr/include/ncurses"
-%configure 
+%configure
 
 %{__make}
 
