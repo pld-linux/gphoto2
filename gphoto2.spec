@@ -5,7 +5,7 @@ Version:	2.1.1
 Release:	1
 License:	GPL
 Group:		Applications/Graphics
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gphoto/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 URL:		http://www.gphoto.net/
 BuildRequires:	aalib-devel
 BuildRequires:	cdk-devel
