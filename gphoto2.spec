@@ -82,13 +82,13 @@ Statyczna wersja gphoto2.
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 cd libgphoto2_port
 rm -f missing
 %{__libtoolize}
-aclocal -I m4
+%{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
 cd ..
