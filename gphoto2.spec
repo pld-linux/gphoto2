@@ -4,14 +4,15 @@
 Summary:	Digital camera software
 Summary(pl):	Oprogramowanie dla kamer cyfrowych
 Name:		gphoto2
-Version:	2.0
-Release:	0.6
+Version:	2.1.0
+Release:	5
 License:	GPL
 Group:		Applications
-Source0:	http://www.gphoto.net/dist/%{name}-%{version}.tar.gz
+Source0:	http://prdownloads.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-m4.patch
 Patch1:		%{name}-am_ac.patch
 URL:		http://www.gphoto.net/
+BuildRequires:	XFree86-devel
 BuildRequires:	aalib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -75,15 +76,17 @@ Statyczna wersja gphoto2-lib.
 %patch1 -p1
 
 %build
-install /usr/share/automake/missing .
+rm -f missing
 %{__libtoolize}
 aclocal
 %{__autoconf}
+%{__automake}
 cd libgphoto2_port
-install /usr/share/automake/missing .
+rm -f missing
 %{__libtoolize}
 aclocal -I m4
 %{__autoconf}
+%{__automake}
 cd ..
 
 CPPFLAGS="-I/usr/include/cdk -I/usr/include/ncurses"
@@ -120,11 +123,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
 %dir %{_libdir}/gphoto2
-%dir %{_libdir}/gphoto2/2.0
-%attr(755,root,root) %{_libdir}/gphoto2/2.0/libgphoto2_*.??
+%dir %{_libdir}/gphoto2/%{version}
+%attr(755,root,root) %{_libdir}/gphoto2/%{version}/libgphoto2_*.??
 %dir %{_libdir}/gphoto2_port
-%dir %{_libdir}/gphoto2_port/0.0.4
-%attr(755,root,root) %{_libdir}/gphoto2_port/0.0.4/libgphoto2_port_*.??
+%dir %{_libdir}/gphoto2_port/0.5.0
+%attr(755,root,root) %{_libdir}/gphoto2_port/0.5.0/libgphoto2_port_*.??
 
 %files lib-devel
 %defattr(644,root,root,755)
@@ -137,5 +140,5 @@ rm -rf $RPM_BUILD_ROOT
 %files lib-static
 %defattr(644,root,root,755)
 %{_libdir}/*.a
-%{_libdir}/gphoto2/2.0/libgphoto2_*.a
-%{_libdir}/gphoto2_port/0.0.4/libgphoto2_port_*.a
+%{_libdir}/gphoto2/%{version}/lib*.a
+%{_libdir}/gphoto2_port/0.5.0/lib*.a
