@@ -10,7 +10,7 @@ License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 # Source0-md5: ce77b9c9ce25a57990c61f9e301e74b9
-URL:		http://www.gphoto.net/
+URL:		http://www.gphoto.org/
 BuildRequires:	aalib-devel
 BuildRequires:	cdk-devel
 BuildRequires:	gettext-devel
