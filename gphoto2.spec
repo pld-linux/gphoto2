@@ -5,7 +5,7 @@ Summary:	Libraries for digital cameras
 Summary(pl):	Biblioteki obs³ugi kamer cyfrowych
 Name:		gphoto2
 Version:	2.1.0
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications
 Source0:	http://prdownloads.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
@@ -26,6 +26,7 @@ BuildRequires:	libusb-devel
 BuildRequires:	libtool >= 1.4.2-9
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	gphoto2-lib
 
 %description
 Libraries for digital cameras.
@@ -51,6 +52,7 @@ Summary(pl):	Pliki nag³ówkowe dla gphoto2-lib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	libexif-devel
+Obsoletes:	gphoto2-lib-devel
 
 %description devel
 Header files for gphoto2-lib.
@@ -63,6 +65,7 @@ Summary:	Static version of gphoto2-lib
 Summary(pl):	Statyczna wersja gphoto2-lib
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
+Obsoletes:	gphoto2-lib-static
 
 %description static
 Static version of gphoto2-lib.
