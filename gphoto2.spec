@@ -5,7 +5,7 @@ Summary:	Digital camera software
 Summary(pl):	Oprogramowanie dla kamer cyfrowych
 Name:		gphoto2
 Version:	2.0
-Release:	0.3
+Release:	0.5
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.gphoto.net/dist/gphoto2-2.0.tar.gz
@@ -35,7 +35,6 @@ Oprogramowanie dla kamer cyfrowych.
 Summary:	Libraries for digital cameras
 Summary(pl):	Biblioteki obs³ugi kamer cyfrowych
 Group:		Libraries
-Requires:	%{name} = %{version}
 
 %description lib
 Libraries for digital cameras.
@@ -91,9 +90,6 @@ done
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT
 
-LD_LIBRARY_PATH="$RPM_BUILD_ROOT%{_libdir}"
-export LD_LIBRARY_PATH
-
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install -d "$RPM_BUILD_ROOT/%{_pkgconfigdir}"
@@ -104,13 +100,16 @@ gzip -9nf README ChangeLog
 %find_lang %{name}
 %find_lang libgphoto2_port
 
+%post lib -p /sbin/ldconfig
+%postun lib -p /sbin/ldconfig
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/gphoto2
 %{_datadir}/%{name}
 %{_mandir}/*/*
 
@@ -129,6 +128,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files lib-devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gphoto2-*
 %{_includedir}/gphoto2
 %{_libdir}/*.so
 %{_pkgconfigdir}/*
