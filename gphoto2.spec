@@ -11,8 +11,10 @@ Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 # Source0-md5:	5bbee55d4e59b063d3cff0fbc9121006
 Patch0:		%{name}-manpage_addon.patch
+Patch1:		%{name}-libexif069.patch
 URL:		http://www.gphoto.org/
 BuildRequires:	aalib-devel
+BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	cdk-devel
 BuildRequires:	gettext-devel
@@ -48,12 +50,16 @@ uma grande variedade de câmeras fotográficas digitais.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
 CPPFLAGS="-I/usr/include/ncurses"
+%{__aclocal}
+%{__autoheader}
+%{__autoconf}
+%{__automake}
 %configure
-
 %{__make}
 
 %install
