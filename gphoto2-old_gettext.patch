@@ -1,0 +1,111 @@
+--- gphoto2-2.1.1/po/Makefile.in.in~	Fri Oct  3 17:23:52 2003
++++ gphoto2-2.1.1/po/Makefile.in.in	Fri Oct  3 17:23:52 2003
+@@ -11,6 +11,13 @@
+ PACKAGE = @PACKAGE@
+ VERSION = @VERSION@
+ 
++# Usually the message domain is the same as the package name.
++DOMAIN = $(PACKAGE)
++
++# These two variables depend on the location of this directory.
++subdir = po
++top_builddir = ..
++
+ SHELL = /bin/sh
+ @SET_MAKE@
+ 
+@@ -33,14 +40,14 @@
+ MSGFMT = @MSGFMT@
+ XGETTEXT = @XGETTEXT@
+ MSGMERGE = msgmerge
+-MSGMERGE_UPDATE = @MSGMERGE@ --update
+-MSGINIT = msginit
+-MSGCONV = msgconv
+-MSGFILTER = msgfilter
++#MSGMERGE_UPDATE = @MSGMERGE@ --update
++#MSGINIT = msginit
++#MSGCONV = msgconv
++#MSGFILTER = msgfilter
+ 
+ POFILES = @POFILES@
+ GMOFILES = @GMOFILES@
+-UPDATEPOFILES = @UPDATEPOFILES@
++#UPDATEPOFILES = @UPDATEPOFILES@
+ DUMMYPOFILES = @DUMMYPOFILES@
+ DISTFILES.common = Makefile.in.in Makevars remove-potcdate.sin \
+ $(DISTFILES.common.extra1) $(DISTFILES.common.extra2) $(DISTFILES.common.extra3)
+@@ -77,38 +84,19 @@
+ all-yes: $(CATALOGS)
+ all-no:
+ 
+-# Note: Target 'all' must not depend on target '$(DOMAIN).pot-update',
+-# otherwise packages like GCC can not be built if only parts of the source
+-# have been downloaded.
+-
+-$(DOMAIN).pot-update: $(POTFILES) $(srcdir)/POTFILES.in remove-potcdate.sed
+-	$(XGETTEXT) --default-domain=$(DOMAIN) --directory=$(top_srcdir) \
+-	  --add-comments=TRANSLATORS: $(XGETTEXT_OPTIONS) \
++$(srcdir)/$(DOMAIN).pot: $(POTFILES) $(srcdir)/POTFILES.in
++	$(XGETTEXT) --default-domain=$(PACKAGE) --directory=$(top_srcdir) \
++	  --add-comments --keyword=_ --keyword=N_ \
+ 	  --files-from=$(srcdir)/POTFILES.in \
+-	  --copyright-holder='$(COPYRIGHT_HOLDER)'
+-	test ! -f $(DOMAIN).po || { \
+-	  if test -f $(srcdir)/$(DOMAIN).pot; then \
+-	    sed -f remove-potcdate.sed < $(srcdir)/$(DOMAIN).pot > $(DOMAIN).1po && \
+-	    sed -f remove-potcdate.sed < $(DOMAIN).po > $(DOMAIN).2po && \
+-	    if cmp $(DOMAIN).1po $(DOMAIN).2po >/dev/null 2>&1; then \
+-	      rm -f $(DOMAIN).1po $(DOMAIN).2po $(DOMAIN).po; \
+-	    else \
+-	      rm -f $(DOMAIN).1po $(DOMAIN).2po $(srcdir)/$(DOMAIN).pot && \
+-	      mv $(DOMAIN).po $(srcdir)/$(DOMAIN).pot; \
+-	    fi; \
+-	  else \
+-	    mv $(DOMAIN).po $(srcdir)/$(DOMAIN).pot; \
+-	  fi; \
+-	}
+-
+-$(srcdir)/$(DOMAIN).pot:
+-	$(MAKE) $(DOMAIN).pot-update
+-
+-$(POFILES): $(srcdir)/$(DOMAIN).pot
+-	@lang=`echo $@ | sed -e 's,.*/,,' -e 's/\.po$$//'`; \
+-	test "$(srcdir)" = . && cdcmd="" || cdcmd="cd $(srcdir) && "; \
+-	echo "$${cdcmd}$(MSGMERGE_UPDATE) $${lang}.po $(DOMAIN).pot"; \
+-	cd $(srcdir) && $(MSGMERGE_UPDATE) $${lang}.po $(DOMAIN).pot
++	&& test ! -f $(PACKAGE).po \
++	   || ( rm -f $(srcdir)/$(PACKAGE).pot \
++		&& mv $(PACKAGE).po $(srcdir)/$(PACKAGE).pot )
++
++#$(POFILES): $(srcdir)/$(DOMAIN).pot
++#	@lang=`echo $@ | sed -e 's,.*/,,' -e 's/\.po$$//'`; \
++#	test "$(srcdir)" = . && cdcmd="" || cdcmd="cd $(srcdir) && "; \
++#	echo "$${cdcmd}$(MSGMERGE_UPDATE) $${lang}.po $(DOMAIN).pot"; \
++#	cd $(srcdir) && $(MSGMERGE_UPDATE) $${lang}.po $(DOMAIN).pot
+ 
+ 
+ install: install-exec install-data
+@@ -270,8 +258,21 @@
+ 	done
+ 
+ update-po: Makefile
+-	$(MAKE) $(DOMAIN).pot-update
+-	$(MAKE) $(UPDATEPOFILES)
++	$(MAKE) $(PACKAGE).pot
++	if test "$(PACKAGE)" = "gettext"; then PATH=`pwd`/../src:$$PATH; fi; \
++	cd $(srcdir); \
++	catalogs='$(GMOFILES)'; \
++	for cat in $$catalogs; do \
++	  cat=`basename $$cat`; \
++	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
++	  echo "$$lang:"; \
++	  if $(MSGMERGE) $$lang.po $(PACKAGE).pot -o $$lang.new.po; then \
++	    mv -f $$lang.new.po $$lang.po; \
++	  else \
++	    echo "msgmerge for $$cat failed!"; \
++	    rm -f $$lang.new.po; \
++	  fi; \
++	done
+ 	$(MAKE) update-gmo
+ 
+ # General rule for updating PO files.
