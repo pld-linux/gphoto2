@@ -8,7 +8,7 @@ Summary(pl):	Biblioteki obs³ugi kamer cyfrowych
 Summary(pt_BR):	GNU Photo - programa GNU para câmeras digitais
 Name:		gphoto2
 Version:	2.1.0
-Release:	8
+Release:	9
 License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
@@ -132,6 +132,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
+for f in $RPM_BUILD_ROOT%{_datadir}/locale/{da,it,no,ru,sl,uk}/LC_MESSAGES/libgphoto_port.mo ; do
+	[ "`file $f | sed -e 's/.*,//' -e 's/message.*//'`" -le 1 ] && rm -f $f
+done
 %find_lang %{name}
 %find_lang libgphoto2_port
 
