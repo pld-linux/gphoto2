@@ -1,11 +1,14 @@
 # TODO:
 #   make --enable-docs work.
 #   library should be installed in /usr/lib.
+#
 Summary:	Libraries for digital cameras
+Summary(es):	Foto GNU (gphoto) Release 2
 Summary(pl):	Biblioteki obs³ugi kamer cyfrowych
+Summary(pt_BR):	GNU Photo - programa GNU para câmeras digitais
 Name:		gphoto2
 Version:	2.1.0
-Release:	7
+Release:	8
 License:	GPL
 Group:		Applications
 Source0:	http://prdownloads.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
@@ -32,8 +35,15 @@ Provides:	gphoto2-lib
 %description
 Libraries for digital cameras.
 
+%description -l es
+Foto GNU (gphoto).
+
 %description -l pl
 Biblioteki obs³ugi kamer cyfrowych.
+
+%description -l pt_BR
+O programa gphoto faz parte do projeto GNOME e é uma interface para
+uma grande variedade de câmeras fotográficas digitais.
 
 %package progs
 Summary:	Digital camera software
@@ -49,7 +59,9 @@ Oprogramowanie dla kamer cyfrowych.
 
 %package devel
 Summary:	Header files for gphoto2
+Summary(es):	Archivos de deserrolo de gphoto2
 Summary(pl):	Pliki nag³ówkowe dla gphoto2
+Summary(pt_BR):	Arquivos de desenvolvimento do gphoto2
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	libexif-devel
@@ -58,12 +70,20 @@ Obsoletes:	gphoto2-lib-devel
 %description devel
 Header files for gphoto2.
 
+%description devel -l es
+Archivos de desarrolo de gphoto2.
+
 %description devel -l pl
 Pliki nag³ówkowe dla gphoto2.
 
+%description devel -l pt_BR
+Arquivos de desenvolvimento do gphoto2.
+
 %package static
 Summary:	Static version of gphoto2
+Summary(es):	Archivos de deserrolo de gphoto2
 Summary(pl):	Statyczna wersja gphoto2
+Summary(pt_BR):	Arquivos de desenvolvimento do gphoto2
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 Obsoletes:	gphoto2-lib-static
@@ -71,8 +91,14 @@ Obsoletes:	gphoto2-lib-static
 %description static
 Static version of gphoto2.
 
+%description static -l es
+Archivos de desarrolo de gphoto2.
+
 %description static -l pl
 Statyczna wersja gphoto2.
+
+%description static -l pt_BR
+Arquivos de desenvolvimento do gphoto2.
 
 %prep
 %setup -q
