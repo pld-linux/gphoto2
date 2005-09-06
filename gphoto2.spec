@@ -4,15 +4,13 @@ Summary(pl):	Dzia³aj±cy z linii poleceñ program obs³uguj±cy libgphoto2
 Summary(pt_BR):	GNU Photo - programa GNU para câmeras digitais
 Summary(zh_CN):	gPhoto - LinuxÏÂµÄÊ¹ÓÃÊýÂëÏà»úµÄ³ÌÐò
 Name:		gphoto2
-Version:	2.1.5
+Version:	2.1.6
 Release:	1
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.gz
-# Source0-md5:	9bd1a033389f9e4e6425dda4f6e603c9
-#Patch0:		%{name}-manpage_addon.patch
-Patch1:		%{name}-libexif069.patch
-Patch2:		%{name}-locale_names.patch
+# Source0-md5:	2de2bcc62599b8a7337b54b0a067c50b
+Patch0:		%{name}-manpage_addon.patch
 URL:		http://www.gphoto.org/
 BuildRequires:	aalib-devel
 BuildRequires:	autoconf
@@ -50,12 +48,7 @@ uma grande variedade de câmeras fotográficas digitais.
 
 %prep
 %setup -q
-#%%patch0 -p1
-#%patch1 -p1
-%patch2 -p1
-
-mv po/{no,nb}.po
-mv po/{no,nb}.gmo
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
