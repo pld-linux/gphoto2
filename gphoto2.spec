@@ -5,7 +5,7 @@ Summary(pt_BR):	GNU Photo - programa GNU para c鈓eras digitais
 Summary(zh_CN):	gPhoto - Linux下的使用数码相机的程序
 Name:		gphoto2
 Version:	2.1.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.gz
