@@ -4,27 +4,27 @@ Summary(pl):	Dzia³aj±cy z linii poleceñ program obs³uguj±cy libgphoto2
 Summary(pt_BR):	GNU Photo - programa GNU para câmeras digitais
 Summary(zh_CN):	gPhoto - LinuxÏÂµÄÊ¹ÓÃÊýÂëÏà»úµÄ³ÌÐò
 Name:		gphoto2
-Version:	2.1.6
-Release:	2
+Version:	2.1.99
+Release:	1
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.gz
-# Source0-md5:	2de2bcc62599b8a7337b54b0a067c50b
+# Source0-md5:	1b36d2d62aab637ad88f334194a88c32
 Source1:	%{name}-pl.po
 Patch0:		%{name}-manpage_addon.patch
 URL:		http://www.gphoto.org/
 BuildRequires:	aalib-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	cdk-devel
-BuildRequires:	gettext-devel
-BuildRequires:	libexif-devel
-BuildRequires:	libgphoto2-devel >= 2.1.1
+BuildRequires:	autoconf >= 2.59
+BuildRequires:	automake >= 1:1.8
+BuildRequires:	cdk-devel >= 5.0_td20010421
+BuildRequires:	gettext-devel >= 0.14.1
+BuildRequires:	libexif-devel >= 0.6.9
+BuildRequires:	libgphoto2-devel >= 2.1.99
 BuildRequires:	libjpeg-devel
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	readline-devel
-Requires:	libgphoto2 >= 2.1.1
+Requires:	libgphoto2 >= 2.1.99
 #Requires:	dcraw
 Obsoletes:	gphoto2-progs
 # these are not true (renamed to libgphoto2-{devel,static}) - we must have
@@ -52,14 +52,14 @@ uma grande variedade de câmeras fotográficas digitais.
 %patch0 -p1
 
 cp %{SOURCE1} po/pl.po
-sed -i -e 's/\(ALL_LINGUAS=.*\)"$/\1 pl"/' configure.in
+sed -i -e 's/\(ALL_LINGUAS=.*\)"$/\1 pl"/' configure.ac
 rm -f po/stamp-po
 
 %build
 CPPFLAGS="-I/usr/include/ncurses"
-%{__aclocal}
-%{__autoheader}
+%{__aclocal} -I m4m
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
@@ -80,6 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ChangeLog README TODO
+%doc CHANGES ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/gphoto2
 %{_mandir}/man1/*
