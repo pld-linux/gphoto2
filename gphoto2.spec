@@ -10,6 +10,7 @@ License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.gz
 # Source0-md5:	2de2bcc62599b8a7337b54b0a067c50b
+Source1:	%{name}-pl.po
 Patch0:		%{name}-manpage_addon.patch
 URL:		http://www.gphoto.org/
 BuildRequires:	aalib-devel
@@ -50,8 +51,11 @@ uma grande variedade de câmeras fotográficas digitais.
 %setup -q
 %patch0 -p1
 
+cp %{SOURCE1} po/pl.po
+sed -i -e 's/\(ALL_LINGUAS=.*\)"$/\1 pl"/' configure.in
+rm -f po/stamp-po
+
 %build
-cp -f /usr/share/automake/config.* .
 CPPFLAGS="-I/usr/include/ncurses"
 %{__aclocal}
 %{__autoheader}
