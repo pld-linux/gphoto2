@@ -10,8 +10,9 @@ License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 # Source0-md5:	f5c1f83185db598b4ca52889964a5e84
-Source1:	%{name}-pl.po
+#Source1:	%{name}-pl.po
 Patch0:		%{name}-manpage_addon.patch
+Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gphoto.org/
 BuildRequires:	aalib-devel
 BuildRequires:	autoconf >= 2.59
@@ -19,12 +20,12 @@ BuildRequires:	automake >= 1:1.8
 BuildRequires:	cdk-devel >= 5.0_td20010421
 BuildRequires:	gettext-devel >= 0.14.1
 BuildRequires:	libexif-devel >= 0.6.9
-BuildRequires:	libgphoto2-devel >= 2.1.99
+BuildRequires:	libgphoto2-devel >= 2.2.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	readline-devel
-Requires:	libgphoto2 >= 2.1.99
+Requires:	libgphoto2 >= 2.2.0
 #Requires:	dcraw
 Obsoletes:	gphoto2-progs
 # these are not true (renamed to libgphoto2-{devel,static}) - we must have
@@ -50,9 +51,8 @@ uma grande variedade de câmeras fotográficas digitais.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
-cp %{SOURCE1} po/pl.po
-sed -i -e 's/\(ALL_LINGUAS=.*\)"$/\1 pl"/' configure.ac
 rm -f po/stamp-po
 
 %build
