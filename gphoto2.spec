@@ -13,6 +13,7 @@ Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-manpage_addon.patch
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-am.patch
+Patch3:		%{name}-version.patch
 URL:		http://www.gphoto.org/
 BuildRequires:	aalib-devel
 BuildRequires:	autoconf >= 2.59
@@ -25,8 +26,8 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	readline-devel
-Requires:	libgphoto2 >= 2.3.0
 #Requires:	dcraw
+Requires:	libgphoto2 >= 2.3.0
 Obsoletes:	gphoto2-progs
 # these are not true (renamed to libgphoto2-{devel,static}) - we must have
 # the way to just rename package which is not required by anything installed
@@ -53,6 +54,7 @@ uma grande variedade de câmeras fotográficas digitais.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 rm -f po/stamp-po
 
