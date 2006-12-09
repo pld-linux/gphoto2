@@ -20,12 +20,12 @@ BuildRequires:	automake >= 1:1.9
 BuildRequires:	cdk-devel >= 5.0_td20010421
 BuildRequires:	gettext-devel >= 0.14.1
 BuildRequires:	libexif-devel >= 0.6.9
-BuildRequires:	libgphoto2-devel >= 2.2.0
+BuildRequires:	libgphoto2-devel >= 2.3.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	readline-devel
-Requires:	libgphoto2 >= 2.2.0
+Requires:	libgphoto2 >= 2.3.0
 #Requires:	dcraw
 Obsoletes:	gphoto2-progs
 # these are not true (renamed to libgphoto2-{devel,static}) - we must have
