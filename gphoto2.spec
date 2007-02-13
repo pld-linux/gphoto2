@@ -1,8 +1,8 @@
 Summary:	Command-line frontend to libgphoto2
-Summary(es.UTF-8):   Foto GNU (gphoto) Release 2
-Summary(pl.UTF-8):   Działający z linii poleceń program obsługujący libgphoto2
-Summary(pt_BR.UTF-8):   GNU Photo - programa GNU para câmeras digitais
-Summary(zh_CN.UTF-8):   gPhoto - Linux下的使用数码相机的程序
+Summary(es.UTF-8):	Foto GNU (gphoto) Release 2
+Summary(pl.UTF-8):	Działający z linii poleceń program obsługujący libgphoto2
+Summary(pt_BR.UTF-8):	GNU Photo - programa GNU para câmeras digitais
+Summary(zh_CN.UTF-8):	gPhoto - Linux下的使用数码相机的程序
 Name:		gphoto2
 Version:	2.3.1
 Release:	1
