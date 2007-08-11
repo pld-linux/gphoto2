@@ -1,10 +1,10 @@
---- gphoto2-2.3.0/doc/gphoto2.1.orig	2006-11-25 15:47:15.000000000 +0100
-+++ gphoto2-2.3.0/doc/gphoto2.1	2006-12-09 10:40:15.577338186 +0100
-@@ -331,6 +331,7 @@
- \fI1\fR.
+--- gphoto2-2.4.0/doc/gphoto2.1.orig	2007-07-27 02:35:23.000000000 +0200
++++ gphoto2-2.4.0/doc/gphoto2.1	2007-08-11 20:18:38.688649991 +0200
+@@ -581,6 +581,7 @@
  .SH "SEE ALSO"
  .PP
+ 
 +dcraw(1),
  libgphoto2(3),
- [1]\&\fIThe gPhoto2 Manual\fR,[2]\&\fIThe gphoto.org website\fR,
- [3]\&\fIDigital Camera Support for UNIX, Linux and BSD\fR
+ \fIThe gPhoto2 Manual\fR\&[1],
+ 
