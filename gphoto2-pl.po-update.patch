@@ -1,0 +1,50 @@
+--- gphoto2-2.4.2/po/pl.po.orig	2008-06-22 18:31:36.000000000 +0200
++++ gphoto2-2.4.2/po/pl.po	2008-07-16 00:41:17.226034707 +0200
+@@ -1,14 +1,14 @@
+ # Polish translation for gphoto2.
+-# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
++# Copyright (C) 2006, 2007, 2008 Free Software Foundation, Inc.
+ # This file is distributed under the same license as the gphoto2 package.
+-# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2007.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2008.
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gphoto2 2.4.0\n"
++"Project-Id-Version: gphoto2 2.4.2\n"
+ "Report-Msgid-Bugs-To: gphoto-devel@lists.sourceforge.net\n"
+ "POT-Creation-Date: 2008-06-22 18:31+0200\n"
+-"PO-Revision-Date: 2007-08-11 12:50+0200\n"
++"PO-Revision-Date: 2008-07-15 06:16+0200\n"
+ "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+@@ -996,9 +996,8 @@
+ msgstr "Zrobienie zdjęcia"
+ 
+ #: gphoto2/main.c:1598
+-#, fuzzy
+ msgid "Capture an image and download it"
+-msgstr "Zrobienie zdjęcia"
++msgstr "Zrobienie zdjęcia i ściągnięcie go"
+ 
+ #: gphoto2/main.c:1600
+ msgid "Capture a movie"
+@@ -1354,9 +1353,8 @@
+ msgstr "Zrobienie pojedynczego zdjęcia"
+ 
+ #: gphoto2/shell.c:144
+-#, fuzzy
+ msgid "Capture a single image and download it"
+-msgstr "Zrobienie pojedynczego zdjęcia"
++msgstr "Zrobienie pojedynczego zdjęcia i ściągnięcie go"
+ 
+ #: gphoto2/shell.c:469
+ msgid "Invalid command."
+@@ -1431,6 +1429,3 @@
+ msgstr ""
+ "Aby uzyskać pomoc dla danego polecenia, należy napisać 'help nazwa-"
+ "polecenia'."
+-
+-#~ msgid "[name]"
+-#~ msgstr "[nazwa]"
