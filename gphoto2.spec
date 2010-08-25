@@ -19,7 +19,7 @@ BuildRequires:	automake >= 1:1.9
 BuildRequires:	cdk-devel >= 5.0_td20010421
 BuildRequires:	gettext-devel >= 0.14.1
 BuildRequires:	libexif-devel >= 0.6.9
-BuildRequires:	libgphoto2-devel >= 2.4.5
+BuildRequires:	libgphoto2-devel >= 2.4.10
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
