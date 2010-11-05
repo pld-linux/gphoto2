@@ -8,7 +8,7 @@ Version:	2.4.10
 Release:	2
 License:	LGPL v2+
 Group:		Applications/Graphics
-Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 # Source0-md5:	3c86c9824b9bfc57a52be5f84ad205f7
 Patch0:		%{name}-manpage_addon.patch
 Patch1:		%{name}-am.patch
@@ -49,7 +49,7 @@ uma grande variedade de câmeras fotográficas digitais.
 %patch0 -p1
 %patch1 -p1
 
-rm -f po/stamp-po
+%{__rm} po/stamp-po
 
 %build
 %{__libtoolize}
@@ -57,7 +57,7 @@ rm -f po/stamp-po
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-CPPFLAGS="-I/usr/include/ncurses"
+CPPFLAGS="%{rpmcppflags} -I/usr/include/ncurses"
 %configure
 %{__make}
 
@@ -77,6 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ChangeLog NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/gphoto2
 %{_mandir}/man1/gphoto2.1*
