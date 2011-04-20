@@ -1,0 +1,39 @@
+--- gphoto2-2.4.11/po/pl.po.orig	2011-04-17 19:42:09.000000000 +0200
++++ gphoto2-2.4.11/po/pl.po	2011-04-20 20:31:27.819959513 +0200
+@@ -1,14 +1,14 @@
+ # Polish translation for gphoto2.
+-# Copyright (C) 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
++# Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
+ # This file is distributed under the same license as the gphoto2 package.
+-# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2010.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2011.
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gphoto2 2.4.10\n"
++"Project-Id-Version: gphoto2 2.4.11\n"
+ "Report-Msgid-Bugs-To: gphoto-devel@lists.sourceforge.net\n"
+ "POT-Creation-Date: 2011-04-17 19:42+0200\n"
+-"PO-Revision-Date: 2010-08-18 08:37+0200\n"
++"PO-Revision-Date: 2011-04-19 19:24+0200\n"
+ "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "Language: pl\n"
+@@ -777,9 +777,8 @@
+ msgstr "Zapisywanie pliku jako %s\n"
+ 
+ #: gphoto2/main.c:507
+-#, fuzzy
+ msgid "Permission denied"
+-msgstr "  Uprawnienia: "
++msgstr "Brak uprawnień"
+ 
+ #: gphoto2/main.c:632
+ #, c-format
+@@ -1588,6 +1587,3 @@
+ msgstr ""
+ "Aby uzyskać pomoc dla danego polecenia, należy napisać 'help nazwa-"
+ "polecenia'."
+-
+-#~ msgid "You cannot use '%%n' in combination with non-persistent files!"
+-#~ msgstr "Nie można użyć '%%n' w połączeniu z nietrwałymi plikami!"
