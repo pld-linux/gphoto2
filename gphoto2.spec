@@ -1,32 +1,36 @@
+#
+# Conditional build:
+%bcond_without	aalib	# AAlib support
+#
 Summary:	Command-line frontend to libgphoto2
 Summary(es.UTF-8):	Foto GNU (gphoto) Release 2
 Summary(pl.UTF-8):	Działający z linii poleceń program obsługujący libgphoto2
 Summary(pt_BR.UTF-8):	GNU Photo - programa GNU para câmeras digitais
 Summary(zh_CN.UTF-8):	gPhoto - Linux下的使用数码相机的程序
 Name:		gphoto2
-Version:	2.4.11
+Version:	2.4.14
 Release:	1
 License:	LGPL v2+
 Group:		Applications/Graphics
 Source0:	http://downloads.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
-# Source0-md5:	2635075f702b40eb2e95a80658bd4773
+# Source0-md5:	60fd6e44d89592f6172227be67227636
 Patch0:		%{name}-manpage_addon.patch
 Patch1:		%{name}-am.patch
 Patch2:		%{name}-pl.po-update.patch
 URL:		http://www.gphoto.org/
-BuildRequires:	aalib-devel
+%{?with_aalib:BuildRequires:	aalib-devel}
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	cdk-devel >= 5.0_td20010421
 BuildRequires:	gettext-devel >= 0.14.1
 BuildRequires:	libexif-devel >= 0.6.9
-BuildRequires:	libgphoto2-devel >= 2.4.11
+BuildRequires:	libgphoto2-devel >= 2.4.14
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	readline-devel
-Requires:	libgphoto2 >= 2.4.11
+Requires:	libgphoto2 >= 2.4.14
 Obsoletes:	gphoto2-progs
 # these are not true (renamed to libgphoto2-{devel,static}) - we must have
 # the way to just rename package which is not required by anything installed
@@ -60,7 +64,8 @@ uma grande variedade de câmeras fotográficas digitais.
 %{__autoheader}
 %{__automake}
 CPPFLAGS="%{rpmcppflags} -I/usr/include/ncurses"
-%configure
+%configure \
+	%{?with_aalib:--with-aalib}
 %{__make}
 
 %install
