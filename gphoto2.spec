@@ -59,10 +59,10 @@ uma grande variedade de câmeras fotográficas digitais.
 
 %build
 %{__libtoolize}
-%{__aclocal} -I m4m
+#%%{__aclocal} -I m4m
 %{__autoconf}
 %{__autoheader}
-%{__automake}
+#%%{__automake}
 CPPFLAGS="%{rpmcppflags} -I/usr/include/ncurses"
 %configure \
 	%{?with_aalib:--with-aalib}
