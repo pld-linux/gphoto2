@@ -15,8 +15,8 @@ Group:		Applications/Graphics
 Source0:	http://downloads.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 # Source0-md5:	60fd6e44d89592f6172227be67227636
 Patch0:		%{name}-manpage_addon.patch
-Patch1:		%{name}-am.patch
-Patch2:		%{name}-pl.po-update.patch
+Patch1:		%{name}-pl.po-update.patch
+Patch2:		automake-1.12.patch
 URL:		http://www.gphoto.org/
 %{?with_aalib:BuildRequires:	aalib-devel}
 BuildRequires:	autoconf >= 2.59
@@ -59,10 +59,10 @@ uma grande variedade de câmeras fotográficas digitais.
 
 %build
 %{__libtoolize}
-#%%{__aclocal} -I m4m
+%{__aclocal} -I m4m
 %{__autoconf}
 %{__autoheader}
-#%%{__automake}
+%{__automake}
 CPPFLAGS="%{rpmcppflags} -I/usr/include/ncurses"
 %configure \
 	%{?with_aalib:--with-aalib}
