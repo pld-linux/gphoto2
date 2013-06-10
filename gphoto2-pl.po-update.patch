@@ -1,116 +1,37 @@
---- gphoto2-2.5.1/po/pl.po.orig	2013-01-27 21:10:52.000000000 +0100
-+++ gphoto2-2.5.1/po/pl.po	2013-02-04 20:12:45.358671913 +0100
-@@ -1,14 +1,14 @@
- # Polish translation for gphoto2.
--# Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012 Free Software Foundation, Inc.
-+# Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013 Free Software Foundation, Inc.
- # This file is distributed under the same license as the gphoto2 package.
--# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2012.
-+# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2013.
+--- gphoto2-2.5.2/po/pl.po.orig	2013-06-10 21:56:45.885522847 +0200
++++ gphoto2-2.5.2/po/pl.po	2013-06-10 21:57:35.808855139 +0200
+@@ -5,10 +5,10 @@
  #
  msgid ""
  msgstr ""
--"Project-Id-Version: gphoto2 2.4.14\n"
-+"Project-Id-Version: gphoto2 2.5.1\n"
+-"Project-Id-Version: gphoto2 2.5.1\n"
++"Project-Id-Version: gphoto2 2.5.2\n"
  "Report-Msgid-Bugs-To: gphoto-devel@lists.sourceforge.net\n"
- "POT-Creation-Date: 2013-01-27 21:10+0100\n"
--"PO-Revision-Date: 2012-04-17 21:09+0200\n"
-+"PO-Revision-Date: 2013-02-04 18:45+0100\n"
+ "POT-Creation-Date: 2013-05-05 21:52+0200\n"
+-"PO-Revision-Date: 2013-02-04 18:45+0100\n"
++"PO-Revision-Date: 2013-06-10 19:54+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "Language: pl\n"
-@@ -426,7 +426,7 @@
- #: gphoto2/actions.c:1049
- #, c-format
- msgid "Movie capture finished (%d frames)\n"
--msgstr ""
-+msgstr "Nagrywanie filmu zakończone (klatek: %d)\n"
+@@ -644,9 +644,8 @@
+ msgstr "Nie udało się ustawić wartości %s widgetu przełącznika %s."
  
- #: gphoto2/actions.c:1079
- #, c-format
-@@ -435,17 +435,18 @@
- "Oczekiwanie na zdarzenie z aparatu. Aby przerwać, proszę nacisnąć Ctrl-C.\n"
- 
- #: gphoto2/actions.c:1085
--#, fuzzy, c-format
-+#, c-format
- msgid "Waiting for %d frames from the camera. Press Ctrl-C to abort.\n"
- msgstr ""
--"Oczekiwanie na %d zdarzeń z aparatu. Aby przerwać, proszę nacisnąć Ctrl-C.\n"
-+"Oczekiwanie na otrzymanie %d klatek z aparatu. Aby przerwać, proszę nacisnąć "
-+"Ctrl-C.\n"
- 
- #: gphoto2/actions.c:1090
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "Waiting for %d milliseconds for events from camera. Press Ctrl-C to abort.\n"
- msgstr ""
--"Oczekiwanie przez %d sekund na zdarzenia z aparatu. Aby przerwać, proszę "
-+"Oczekiwanie przez %d milisekund na zdarzenia z aparatu. Aby przerwać, proszę "
- "nacisnąć Ctrl-C.\n"
- 
- #: gphoto2/actions.c:1095
-@@ -814,7 +815,6 @@
- msgstr "Brak uprawnień"
- 
- #: gphoto2/main.c:707
+ #: gphoto2/actions.c:1750
 -#, fuzzy
- msgid "Could not trigger capture."
- msgstr "Nie udało się wyzwolić zrobienia zdjęcia."
+ msgid "now"
+-msgstr "nie"
++msgstr "teraz"
  
-@@ -829,9 +829,9 @@
- msgstr "Usuwanie pliku %s%s%s z aparatu\n"
- 
- #: gphoto2/main.c:777
--#, fuzzy, c-format
-+#, c-format
- msgid "Keeping file %s%s%s on the camera\n"
--msgstr "Usuwanie pliku %s%s%s z aparatu\n"
-+msgstr "Zachowywanie pliku %s%s%s na aparacie\n"
- 
- #: gphoto2/main.c:810
+ #: gphoto2/actions.c:1758 gphoto2/actions.c:1983
  #, c-format
-@@ -1114,11 +1114,11 @@
+@@ -1118,9 +1117,8 @@
+ msgstr "Ustawienie wartości w konfiguracji"
  
- #: gphoto2/main.c:1864
+ #: gphoto2/main.c:1894
+-#, fuzzy
+ msgid "Reset device port"
+-msgstr "Określenie portu urządzenia"
++msgstr "Reset portu urządzenia"
+ 
+ #: gphoto2/main.c:1900
  msgid "Keep images on camera after capturing"
--msgstr ""
-+msgstr "Zachowanie zdjęć na aparacie po wykonaniu"
- 
- #: gphoto2/main.c:1866
- msgid "Remove images from camera after capturing"
--msgstr ""
-+msgstr "Usunięcie zdjęć z aparatu po wykonaniu"
- 
- #: gphoto2/main.c:1868
- msgid "Wait for event(s) from camera"
-@@ -1162,9 +1162,8 @@
- msgstr "Zrobienie zdjęcia"
- 
- #: gphoto2/main.c:1885
--#, fuzzy
- msgid "Trigger capture of an image"
--msgstr "Zrobienie zdjęcia"
-+msgstr "Wyzwolenie zrobienia zdjęcia"
- 
- #: gphoto2/main.c:1887
- msgid "Capture an image and download it"
-@@ -1187,9 +1186,8 @@
- msgstr "Oczekiwanie na zwolnienie migawki aparatu i ściągnięcie"
- 
- #: gphoto2/main.c:1895
--#, fuzzy
- msgid "Trigger image capture"
--msgstr "Nie udało się wyzwolić zrobienia zdjęcia."
-+msgstr "Wyzwolenie zrobienia zdjęcia"
- 
- #: gphoto2/main.c:1901
- msgid "List folders in folder"
-@@ -1643,6 +1641,3 @@
- msgstr ""
- "Aby uzyskać pomoc dla danego polecenia, należy napisać 'help nazwa-"
- "polecenia'."
--
--#~ msgid "  Name:        '%s'\n"
--#~ msgstr "  Nazwa:       '%s'\n"
