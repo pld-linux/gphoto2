@@ -23,7 +23,7 @@ URL:		http://www.gphoto.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	cdk-devel >= 5.0_td20010421
-BuildRequires:	gettext-devel >= 0.14.1
+BuildRequires:	gettext-tools >= 0.14.1
 BuildRequires:	libexif-devel >= 0.6.9
 BuildRequires:	libgphoto2-devel >= 2.5.4
 BuildRequires:	libjpeg-devel
