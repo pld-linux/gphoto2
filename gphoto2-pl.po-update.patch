@@ -1,42 +1,64 @@
---- gphoto2-2.5.4/po/pl.po.orig	2014-03-23 19:35:12.000000000 +0100
-+++ gphoto2-2.5.4/po/pl.po	2014-03-27 17:52:27.809564535 +0100
-@@ -1,14 +1,14 @@
- # Polish translation for gphoto2.
--# Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013 Free Software Foundation, Inc.
-+# Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014 Free Software Foundation, Inc.
- # This file is distributed under the same license as the gphoto2 package.
--# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2013.
-+# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2014.
- #
- msgid ""
- msgstr ""
--"Project-Id-Version: gphoto2 2.5.2\n"
-+"Project-Id-Version: gphoto2 2.5.4\n"
- "Report-Msgid-Bugs-To: gphoto-devel@lists.sourceforge.net\n"
- "POT-Creation-Date: 2014-03-23 19:35+0100\n"
--"PO-Revision-Date: 2013-06-10 19:54+0200\n"
-+"PO-Revision-Date: 2014-03-27 17:26+0100\n"
- "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
- "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
- "Language: pl\n"
-@@ -795,9 +795,9 @@
- msgstr "Nieprawidłowy format '%s' (błąd na pozycji %i)."
+--- gphoto2-2.5.8/po/pl.po.orig	2015-07-09 19:14:17.572743515 +0200
++++ gphoto2-2.5.8/po/pl.po	2015-07-09 21:06:54.495793192 +0200
+@@ -1111,9 +1111,8 @@
+ msgstr "Wypisanie listy obsługiwanych urządzeń portów"
  
- #: gphoto2/main.c:382 gphoto2/main.c:561
--#, fuzzy, c-format
-+#, c-format
- msgid "Skip existing file %s\n"
--msgstr "Zapisywanie pliku jako %s\n"
-+msgstr "Pomijanie istniejącego pliku %s\n"
+ #: gphoto2/main.c:1986
+-#, fuzzy
+ msgid "Display the camera/driver abilities in the libgphoto2 database"
+-msgstr "Wyświetlenie możliwości aparatu/sterownika"
++msgstr "Wyświetlenie możliwości aparatu/sterownika z bazy danych libgphoto2"
  
- #: gphoto2/main.c:394
- #, c-format
-@@ -1321,7 +1321,7 @@
+ #: gphoto2/main.c:1993
+ msgid "Configure"
+@@ -1152,9 +1151,8 @@
+ msgstr "Zachowanie zdjęć na aparacie po wykonaniu"
  
- #: gphoto2/main.c:2054
- msgid "Skip existing files"
+ #: gphoto2/main.c:2016
+-#, fuzzy
+ msgid "Keep RAW images on camera after capturing"
+-msgstr "Zachowanie zdjęć na aparacie po wykonaniu"
++msgstr "Zachowanie zdjęć RAW w aparacie po wykonaniu"
+ 
+ #: gphoto2/main.c:2018
+ msgid "Remove images from camera after capturing"
+@@ -1166,7 +1164,7 @@
+ 
+ #: gphoto2/main.c:2020 gphoto2/main.c:2022 gphoto2/main.c:2048
+ msgid "COUNT, SECONDS, MILLISECONDS or MATCHSTRING"
 -msgstr ""
-+msgstr "Pomijanie istniejących plików"
++msgstr "COUNT, SECONDS, MILLISECONDS lub MATCHSTRING"
  
- #: gphoto2/main.c:2060
- msgid "Send file to stdout"
+ #: gphoto2/main.c:2022
+ msgid "Wait for event(s) from the camera and download new images"
+@@ -1178,7 +1176,7 @@
+ 
+ #: gphoto2/main.c:2028
+ msgid "Show a quick preview as Ascii Art"
+-msgstr ""
++msgstr "Pokazanie szybkiego podglądu jako ASCII Art"
+ 
+ #: gphoto2/main.c:2030
+ msgid "Set bulb exposure time in seconds"
+@@ -1370,18 +1368,16 @@
+ msgstr "Wypisanie listy wykrytych aparatów"
+ 
+ #: gphoto2/main.c:2125 gphoto2/shell.c:138
+-#, fuzzy
+ msgid "Show EXIF information of JPEG images"
+-msgstr "Pokazanie informacji EXIF"
++msgstr "Pokazywanie informacji EXIF obrazów JPEG"
+ 
+ #: gphoto2/main.c:2128 gphoto2/shell.c:132
+ msgid "Show image information, like width, height, and capture time"
+-msgstr ""
++msgstr "Pokazywanie informacji takich jak szerokość, wysokość i czas migawki"
+ 
+ #: gphoto2/main.c:2130
+-#, fuzzy
+ msgid "Show camera summary"
+-msgstr "Pokazanie opisu"
++msgstr "Pokazanie opisu aparatu"
+ 
+ #: gphoto2/main.c:2132
+ msgid "Show camera driver manual"

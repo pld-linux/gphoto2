@@ -8,12 +8,12 @@ Summary(pl.UTF-8):	Działający z linii poleceń program obsługujący libgphoto
 Summary(pt_BR.UTF-8):	GNU Photo - programa GNU para câmeras digitais
 Summary(zh_CN.UTF-8):	gPhoto - Linux下的使用数码相机的程序
 Name:		gphoto2
-Version:	2.5.4
+Version:	2.5.8
 Release:	1
 License:	LGPL v2+
 Group:		Applications/Graphics
 Source0:	http://downloads.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
-# Source0-md5:	55e062dfb09a9589b4f9d6d545724c60
+# Source0-md5:	bae369aee6881e590c5c91bdbb11a5f8
 Patch0:		%{name}-manpage_addon.patch
 Patch1:		automake-1.12.patch
 Patch2:		%{name}-ac.patch
@@ -25,13 +25,13 @@ BuildRequires:	automake >= 1:1.9
 BuildRequires:	cdk-devel >= 5.0_td20010421
 BuildRequires:	gettext-tools >= 0.14.1
 BuildRequires:	libexif-devel >= 0.6.9
-BuildRequires:	libgphoto2-devel >= 2.5.4
+BuildRequires:	libgphoto2-devel >= 2.5.8
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	readline-devel
-Requires:	libgphoto2 >= 2.5.4
+Requires:	libgphoto2 >= 2.5.8
 Obsoletes:	gphoto2-progs
 # these are not true (renamed to libgphoto2-{devel,static}) - we must have
 # the way to just rename package which is not required by anything installed
