@@ -1,64 +1,27 @@
---- gphoto2-2.5.8/po/pl.po.orig	2015-07-09 19:14:17.572743515 +0200
-+++ gphoto2-2.5.8/po/pl.po	2015-07-09 21:06:54.495793192 +0200
-@@ -1111,9 +1111,8 @@
- msgstr "Wypisanie listy obsługiwanych urządzeń portów"
+--- gphoto2-2.5.9/po/pl.po.orig	2015-11-20 18:52:36.643672661 +0100
++++ gphoto2-2.5.9/po/pl.po	2015-11-20 18:53:09.253671983 +0100
+@@ -5,10 +5,10 @@
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gphoto2 2.5.8\n"
++"Project-Id-Version: gphoto2 2.5.9\n"
+ "Report-Msgid-Bugs-To: gphoto-devel@lists.sourceforge.net\n"
+ "POT-Creation-Date: 2015-11-18 22:19+0100\n"
+-"PO-Revision-Date: 2015-07-22 17:11+0200\n"
++"PO-Revision-Date: 2015-11-19 18:00+0100\n"
+ "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "Language: pl\n"
+@@ -287,9 +287,9 @@
+ msgstr "                                 : Podgląd\n"
  
- #: gphoto2/main.c:1986
--#, fuzzy
- msgid "Display the camera/driver abilities in the libgphoto2 database"
--msgstr "Wyświetlenie możliwości aparatu/sterownika"
-+msgstr "Wyświetlenie możliwości aparatu/sterownika z bazy danych libgphoto2"
+ #: gphoto2/actions.c:709
+-#, fuzzy, c-format
++#, c-format
+ msgid "                                 : Trigger Capture\n"
+-msgstr "                                 : %i\n"
++msgstr "                                 : Wyzwolenie zdjęcia\n"
  
- #: gphoto2/main.c:1993
- msgid "Configure"
-@@ -1152,9 +1151,8 @@
- msgstr "Zachowanie zdjęć na aparacie po wykonaniu"
- 
- #: gphoto2/main.c:2016
--#, fuzzy
- msgid "Keep RAW images on camera after capturing"
--msgstr "Zachowanie zdjęć na aparacie po wykonaniu"
-+msgstr "Zachowanie zdjęć RAW w aparacie po wykonaniu"
- 
- #: gphoto2/main.c:2018
- msgid "Remove images from camera after capturing"
-@@ -1166,7 +1164,7 @@
- 
- #: gphoto2/main.c:2020 gphoto2/main.c:2022 gphoto2/main.c:2048
- msgid "COUNT, SECONDS, MILLISECONDS or MATCHSTRING"
--msgstr ""
-+msgstr "COUNT, SECONDS, MILLISECONDS lub MATCHSTRING"
- 
- #: gphoto2/main.c:2022
- msgid "Wait for event(s) from the camera and download new images"
-@@ -1178,7 +1176,7 @@
- 
- #: gphoto2/main.c:2028
- msgid "Show a quick preview as Ascii Art"
--msgstr ""
-+msgstr "Pokazanie szybkiego podglądu jako ASCII Art"
- 
- #: gphoto2/main.c:2030
- msgid "Set bulb exposure time in seconds"
-@@ -1370,18 +1368,16 @@
- msgstr "Wypisanie listy wykrytych aparatów"
- 
- #: gphoto2/main.c:2125 gphoto2/shell.c:138
--#, fuzzy
- msgid "Show EXIF information of JPEG images"
--msgstr "Pokazanie informacji EXIF"
-+msgstr "Pokazywanie informacji EXIF obrazów JPEG"
- 
- #: gphoto2/main.c:2128 gphoto2/shell.c:132
- msgid "Show image information, like width, height, and capture time"
--msgstr ""
-+msgstr "Pokazywanie informacji takich jak szerokość, wysokość i czas migawki"
- 
- #: gphoto2/main.c:2130
--#, fuzzy
- msgid "Show camera summary"
--msgstr "Pokazanie opisu"
-+msgstr "Pokazanie opisu aparatu"
- 
- #: gphoto2/main.c:2132
- msgid "Show camera driver manual"
+ #: gphoto2/actions.c:713
+ #, c-format
