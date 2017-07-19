@@ -1,0 +1,37 @@
+--- gphoto2-2.5.14/configure.ac.orig	2017-07-19 17:05:04.747246216 +0200
++++ gphoto2-2.5.14/configure.ac	2017-07-19 17:24:56.143899271 +0200
+@@ -141,8 +141,8 @@
+ if $try_cdk; then
+         CPPFLAGS_save="$CPPFLAGS"
+         CPPFLAGS="-I$cdk_prefix/include $CPPFLAGS"
+-        AC_CHECK_HEADER([cdk/cdk.h], [
+-                have_cdk=:
++        AC_CHECK_HEADERS([cdk/cdk.h cdk.h], [have_cdk=:])
++        if $have_cdk; then
+                 AC_PATH_PROG([CDK_CONFIG], [cdk5-config])
+                 if test -n "${CDK_CONFIG}"; then
+                         CDK_CFLAGS=`$CDK_CONFIG --cflags`
+@@ -160,7 +160,7 @@
+                         cdk_msg="yes (but without fscale)"
+                 ])
+                 LDFLAGS="$LDFLAGS_save"
+-        ])
++	fi
+         CPPFLAGS="$CPPFLAGS_save"
+ fi
+ AM_CONDITIONAL([HAVE_CDK], [$have_cdk])
+--- gphoto2-2.5.14/gphoto2/gphoto2-cmd-config.c.orig	2015-08-01 13:20:27.000000000 +0200
++++ gphoto2-2.5.14/gphoto2/gphoto2-cmd-config.c	2017-07-19 16:49:28.570590242 +0200
+@@ -29,7 +29,12 @@
+ 
+ #include <gphoto2/gphoto2-widget.h>
+ 
++#ifdef HAVE_CDK_H
++#include <cdk.h>
++#elif defined(HAVE_CDK_CDK_H)
+ #include <cdk/cdk.h>
++#endif
++
+ 
+ #ifndef MAX
+ # define MAX(a, b) ((a) > (b) ? (a) : (b))
