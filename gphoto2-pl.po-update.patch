@@ -1,0 +1,36 @@
+--- gphoto2-2.5.17/po/pl.po.orig	2018-04-16 20:15:40.000000000 +0200
++++ gphoto2-2.5.17/po/pl.po	2018-09-01 19:31:30.114253951 +0200
+@@ -5,7 +5,7 @@
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gphoto2 2.5.9\n"
++"Project-Id-Version: gphoto2 2.5.17\n"
+ "Report-Msgid-Bugs-To: gphoto-devel@lists.sourceforge.net\n"
+ "POT-Creation-Date: 2018-04-16 20:15+0200\n"
+ "PO-Revision-Date: 2015-11-19 18:00+0100\n"
+@@ -469,10 +469,10 @@
+ "Oczekiwanie na %d zdarzeń z aparatu. Aby przerwać, proszę nacisnąć Ctrl-C.\n"
+ 
+ #: gphoto2/actions.c:1134
+-#, fuzzy, c-format
++#, c-format
+ msgid "Waiting for '%s' event from camera. Press Ctrl-C to abort.\n"
+ msgstr ""
+-"Oczekiwanie na zdarzenie %s z aparatu. Aby przerwać, proszę nacisnąć Ctrl-"
++"Oczekiwanie na zdarzenie '%s' z aparatu. Aby przerwać, proszę nacisnąć Ctrl-"
+ "C.\n"
+ 
+ #: gphoto2/actions.c:1178 gphoto2/actions.c:1192 gphoto2/actions.c:1208
+@@ -871,9 +871,9 @@
+ msgstr "Zdarzenie FOLDER_ADDED %s/%s w trakcie oczekiwania, zignorowano.\n"
+ 
+ #: gphoto2/main.c:915
+-#, fuzzy, c-format
++#, c-format
+ msgid "Event FILE_CHANGED %s/%s during wait, ignoring.\n"
+-msgstr "Zdarzenie FOLDER_ADDED %s/%s w trakcie oczekiwania, zignorowano.\n"
++msgstr "Zdarzenie FILE_CHANGED %s/%s w trakcie oczekiwania, zignorowano.\n"
+ 
+ #: gphoto2/main.c:925
+ #, c-format
