@@ -8,12 +8,12 @@ Summary(pl.UTF-8):	Działający z linii poleceń program obsługujący libgphoto
 Summary(pt_BR.UTF-8):	GNU Photo - programa GNU para câmeras digitais
 Summary(zh_CN.UTF-8):	gPhoto - Linux下的使用数码相机的程序
 Name:		gphoto2
-Version:	2.5.20
+Version:	2.5.23
 Release:	1
 License:	LGPL v2+
 Group:		Applications/Graphics
 Source0:	http://downloads.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
-# Source0-md5:	e5078225c505466ed9fc01a007075d54
+# Source0-md5:	0abd5ae8315109ae66bf06ac37902678
 Patch0:		%{name}-manpage_addon.patch
 Patch1:		automake-1.12.patch
 Patch2:		%{name}-ac.patch
