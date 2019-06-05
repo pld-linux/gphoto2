@@ -1,14 +1,36 @@
---- gphoto2-2.5.17/po/pl.po.orig	2018-04-16 20:15:40.000000000 +0200
-+++ gphoto2-2.5.17/po/pl.po	2018-09-01 19:31:30.114253951 +0200
-@@ -5,7 +5,7 @@
+--- gphoto2-2.5.23/po/pl.po.orig	2019-06-02 13:56:34.000000000 +0200
++++ gphoto2-2.5.23/po/pl.po	2019-06-05 20:41:36.623277712 +0200
+@@ -5,10 +5,10 @@
  #
  msgid ""
  msgstr ""
 -"Project-Id-Version: gphoto2 2.5.9\n"
-+"Project-Id-Version: gphoto2 2.5.17\n"
++"Project-Id-Version: gphoto2 2.5.23\n"
  "Report-Msgid-Bugs-To: gphoto-devel@lists.sourceforge.net\n"
- "POT-Creation-Date: 2018-04-16 20:15+0200\n"
- "PO-Revision-Date: 2015-11-19 18:00+0100\n"
+ "POT-Creation-Date: 2019-06-02 13:56+0200\n"
+-"PO-Revision-Date: 2015-11-19 18:00+0100\n"
++"PO-Revision-Date: 2019-06-05 20:31+0200\n"
+ "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "Language: pl\n"
+@@ -369,7 +369,7 @@
+ msgstr "Port OS/2 wykonał Bart van Leeuwen\n"
+ 
+ #: gphoto2/actions.c:908
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "gphoto2 %s\n"
+ "\n"
+@@ -385,7 +385,7 @@
+ msgstr ""
+ "gphoto2 %s\n"
+ "\n"
+-"Copyright (c) 2000-%d Lutz Mueller i inni\n"
++"Copyright (c) 2000-%d Marcus Meisser i inni\n"
+ "%s\n"
+ "gphoto2 jest udostępniony BEZ ŻADNEJ GWARANCJI do granic dopuszczalnych\n"
+ "przez prawo. Można rozprowadzać kopie gphoto2 na warunkach Powszechnej\n"
 @@ -469,10 +469,10 @@
  "Oczekiwanie na %d zdarzeń z aparatu. Aby przerwać, proszę nacisnąć Ctrl-C.\n"
  
@@ -34,3 +56,21 @@
  
  #: gphoto2/main.c:925
  #, c-format
+@@ -1587,9 +1587,8 @@
+ msgstr "nazwa=numer_wartości"
+ 
+ #: gphoto2/shell.c:155
+-#, fuzzy
+ msgid "Triggers the capture of a single image"
+-msgstr "Wyzwolenie zrobienia zdjęcia"
++msgstr "Wyzwolenie zrobienia pojedynczego zdjęcia"
+ 
+ #: gphoto2/shell.c:156
+ msgid "Capture a single image"
+@@ -1702,6 +1701,3 @@
+ msgstr ""
+ "Aby uzyskać pomoc dla danego polecenia, należy napisać 'help nazwa-"
+ "polecenia'."
+-
+-#~ msgid "Trigger image capture"
+-#~ msgstr "Wyzwolenie zrobienia zdjęcia"
