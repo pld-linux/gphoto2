@@ -1,40 +1,48 @@
---- gphoto2-2.5.23/po/pl.po.orig	2019-06-02 13:56:34.000000000 +0200
-+++ gphoto2-2.5.23/po/pl.po	2019-06-05 20:41:36.623277712 +0200
-@@ -5,10 +5,10 @@
+--- gphoto2-2.5.28/po/pl.po.orig	2022-01-03 12:23:06.000000000 +0100
++++ gphoto2-2.5.28/po/pl.po	2022-04-05 20:12:31.489295569 +0200
+@@ -1,14 +1,14 @@
+ # Polish translation for gphoto2.
+-# Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015 Free Software Foundation, Inc.
++# Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2021 Free Software Foundation, Inc.
+ # This file is distributed under the same license as the gphoto2 package.
+-# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2015.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2021.
  #
  msgid ""
  msgstr ""
 -"Project-Id-Version: gphoto2 2.5.9\n"
-+"Project-Id-Version: gphoto2 2.5.23\n"
++"Project-Id-Version: gphoto2 2.5.28\n"
  "Report-Msgid-Bugs-To: gphoto-devel@lists.sourceforge.net\n"
- "POT-Creation-Date: 2019-06-02 13:56+0200\n"
+ "POT-Creation-Date: 2022-01-03 12:21+0100\n"
 -"PO-Revision-Date: 2015-11-19 18:00+0100\n"
-+"PO-Revision-Date: 2019-06-05 20:31+0200\n"
++"PO-Revision-Date: 2022-01-04 21:08+0100\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "Language: pl\n"
-@@ -369,7 +369,7 @@
- msgstr "Port OS/2 wykonał Bart van Leeuwen\n"
+@@ -365,7 +365,7 @@ msgid "You can only specify speeds for s
+ msgstr "Można podać prędkości tylko dla portów szeregowych."
  
- #: gphoto2/actions.c:908
+ #: gphoto2/actions.c:921
 -#, fuzzy, c-format
 +#, c-format
  msgid ""
  "gphoto2 %s\n"
  "\n"
-@@ -385,7 +385,7 @@
+@@ -381,8 +381,8 @@ msgid ""
  msgstr ""
  "gphoto2 %s\n"
  "\n"
 -"Copyright (c) 2000-%d Lutz Mueller i inni\n"
-+"Copyright (c) 2000-%d Marcus Meisser i inni\n"
- "%s\n"
+-"%s\n"
++"Copyright (c) 2000-%d Marcus Meissner i inni\n"
++"\n"
  "gphoto2 jest udostępniony BEZ ŻADNEJ GWARANCJI do granic dopuszczalnych\n"
  "przez prawo. Można rozprowadzać kopie gphoto2 na warunkach Powszechnej\n"
-@@ -469,10 +469,10 @@
+ "Licencji Publicznej GNU (GNU General Public License). Więcej informacji\n"
+@@ -465,21 +465,21 @@ msgstr ""
  "Oczekiwanie na %d zdarzeń z aparatu. Aby przerwać, proszę nacisnąć Ctrl-C.\n"
  
- #: gphoto2/actions.c:1134
+ #: gphoto2/actions.c:1154
 -#, fuzzy, c-format
 +#, c-format
  msgid "Waiting for '%s' event from camera. Press Ctrl-C to abort.\n"
@@ -43,34 +51,99 @@
 +"Oczekiwanie na zdarzenie '%s' z aparatu. Aby przerwać, proszę nacisnąć Ctrl-"
  "C.\n"
  
- #: gphoto2/actions.c:1178 gphoto2/actions.c:1192 gphoto2/actions.c:1208
-@@ -871,9 +871,9 @@
+ #: gphoto2/actions.c:1169
+ #, c-format
+ msgid "SIGUSR1 signal received, triggering capture!\n"
+-msgstr ""
++msgstr "Odebrano sygnał SIGUSR1, wyzwalanie zdjęcia!\n"
+ 
+ #: gphoto2/actions.c:1180
+-#, fuzzy, c-format
++#, c-format
+ msgid "SIGUSR2 signal received, stopping wait!\n"
+-msgstr "napotkano zdarzenie, kończenie oczekiwania!\n"
++msgstr "Odebrano sygnał SIGUSR2, kończenie oczekiwania!\n"
+ 
+ #: gphoto2/actions.c:1218 gphoto2/actions.c:1229 gphoto2/actions.c:1236
+ #: gphoto2/actions.c:1252 gphoto2/actions.c:1290 gphoto2/actions.c:1298
+@@ -878,9 +878,9 @@ msgid "Event FOLDER_ADDED %s/%s during w
  msgstr "Zdarzenie FOLDER_ADDED %s/%s w trakcie oczekiwania, zignorowano.\n"
  
- #: gphoto2/main.c:915
+ #: gphoto2/main.c:917
 -#, fuzzy, c-format
 +#, c-format
  msgid "Event FILE_CHANGED %s/%s during wait, ignoring.\n"
 -msgstr "Zdarzenie FOLDER_ADDED %s/%s w trakcie oczekiwania, zignorowano.\n"
 +msgstr "Zdarzenie FILE_CHANGED %s/%s w trakcie oczekiwania, zignorowano.\n"
  
- #: gphoto2/main.c:925
+ #: gphoto2/main.c:927
  #, c-format
-@@ -1587,9 +1587,8 @@
+@@ -1086,7 +1086,7 @@ msgstr "Ciche wyjście (domyślnie=szcze
+ 
+ #: gphoto2/main.c:1997
+ msgid "Simple parsable output (implies quiet)"
+-msgstr ""
++msgstr "Proste wyjście do analizy (implikuje ciche wyjście)"
+ 
+ #: gphoto2/main.c:1999
+ msgid "Hook script to call after downloads, captures, etc."
+@@ -1186,7 +1186,7 @@ msgstr "Oczekiwanie na zdarzenia z apara
+ 
+ #: gphoto2/main.c:2058 gphoto2/main.c:2060 gphoto2/main.c:2086
+ msgid "EVENT"
+-msgstr ""
++msgstr "ZDARZENIE"
+ 
+ #: gphoto2/main.c:2060
+ msgid "Wait for event(s) from the camera and download new images"
+@@ -1349,10 +1349,11 @@ msgstr "WZORZEC_PLIKU"
+ #, c-format
+ msgid "Specify the number a filename %%n will starts with (default 1)"
+ msgstr ""
++"Określenie numeru, od którego zacznie się nazwa pliku %%n (domyślnie 1)"
+ 
+ #: gphoto2/main.c:2137
+ msgid "NUMBER"
+-msgstr ""
++msgstr "NUMER"
+ 
+ #: gphoto2/main.c:2139
+ msgid "Specify camera folder (default=\"/\")"
+@@ -1452,14 +1453,13 @@ msgid "Downloading, uploading and manipu
+ msgstr "Ściąganie, wysyłanie i obróbka plików"
+ 
+ #: gphoto2/main.c:2249
+-#, fuzzy
+ msgid "EVENT can be either COUNT, SECONDS, MILLISECONDS, or MATCHSTRING.\n"
+-msgstr "COUNT, SECONDS, MILLISECONDS lub MATCHSTRING"
++msgstr "ZDARZENIEM może być COUNT, SECONDS, MILLISECONDS lub MATCHSTRING.\n"
+ 
+ #: gphoto2/main.c:2412 gphoto2/main.c:2461
+ #, c-format
+ msgid "Port %s not found\n"
+-msgstr ""
++msgstr "Nie znaleziono portu %s\n"
+ 
+ #: gphoto2/range.c:107 gphoto2/range.c:161
+ #, c-format
+@@ -1617,9 +1617,8 @@ msgid "name=valueindex"
  msgstr "nazwa=numer_wartości"
  
- #: gphoto2/shell.c:155
+ #: gphoto2/shell.c:157
 -#, fuzzy
  msgid "Triggers the capture of a single image"
 -msgstr "Wyzwolenie zrobienia zdjęcia"
 +msgstr "Wyzwolenie zrobienia pojedynczego zdjęcia"
  
- #: gphoto2/shell.c:156
+ #: gphoto2/shell.c:158
  msgid "Capture a single image"
-@@ -1702,6 +1701,3 @@
+@@ -1732,9 +1731,3 @@ msgid "To get help on a particular comma
  msgstr ""
  "Aby uzyskać pomoc dla danego polecenia, należy napisać 'help nazwa-"
  "polecenia'."
+-
+-#~ msgid "OS/2 port by Bart van Leeuwen\n"
+-#~ msgstr "Port OS/2 wykonał Bart van Leeuwen\n"
 -
 -#~ msgid "Trigger image capture"
 -#~ msgstr "Wyzwolenie zrobienia zdjęcia"
